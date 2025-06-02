@@ -1,0 +1,110 @@
+.add-photo-container {
+  height: 100%;
+  min-height: 150px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  background-color: #f8f9fa;
+  aspect-ratio: 1/1; 
+}
+
+.add-photo-container:hover, 
+.add-photo-container.dragging {
+  border-color: var(--identity-color, #39aaa4);
+  background-color: rgba(57, 170, 164, 0.05);
+}
+
+.add-photo-btn {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  color: #6c757d;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.add-photo-btn:hover {
+  color: var(--identity-color, #39aaa4);
+}
+
+.upload-icon-container {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--identity-color, #39aaa4);
+}
+
+.upload-progress-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.progress-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--identity-color, #39aaa4);
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .add-photo-container {
+    min-height: 150px;
+  }
+  
+  .upload-icon-container {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.uploaded-photos-row {
+  margin-top: 10px;
+}
+
+.photo-container {
+  position: relative;
+}
+
+.photo-thumbnail {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.remove-photo-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 4px 6px;
+  font-size: 0.75rem;
+  z-index: 2;
+}

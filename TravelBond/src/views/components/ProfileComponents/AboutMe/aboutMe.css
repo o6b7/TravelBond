@@ -1,0 +1,72 @@
+.about-me-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-me-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .about-me-header h5 {
+    margin: 0;
+  }
+  
+  .about-me-header .btn {
+    padding: 0;
+    color: var(--identity-color);
+  }
+  
+  .about-me-header .btn:hover {
+    color: var(--hover-color);
+  }
+  
+  .about-me-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .about-me-section textarea:focus {
+    border-color: var(--identity-color);
+    box-shadow: 0 0 0 2px rgba(57, 170, 164, 0.2);
+  }
+  
+  .about-me-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .about-me-section .btn-primary {
+    background-color: var(--identity-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #fff;
+    transition: background-color 0.2s ease;
+  }
+  
+  .about-me-section .btn-primary:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .about-me-section .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #fff;
+    transition: background-color 0.2s ease;
+  }
+  
+  .about-me-section .btn-secondary:hover {
+    background-color: #5a6268;
+  }
