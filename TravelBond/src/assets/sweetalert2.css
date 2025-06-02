@@ -1,0 +1,31 @@
+.custom-swal-popup {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: "Arial", sans-serif;
+    padding: 20px;
+    max-width: 400px;
+  }
+  
+  /* Title Styling */
+  .custom-swal-title {
+    color: var(--identity-color); 
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Confirm Button Styling */
+  .custom-swal-button {
+    background-color: var(--identity-color);
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .custom-swal-button:hover {
+    background-color: var(--identity-color) !important;
+  }
+  
