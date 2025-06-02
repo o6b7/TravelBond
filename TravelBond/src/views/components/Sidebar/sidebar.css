@@ -1,0 +1,74 @@
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--identity-color, #308f8b) !important; 
+  padding: 20px;
+  transition: left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  z-index: 1050;
+  text-align: center;
+}
+
+/* Sidebar opens */
+.sidebar.open {
+  left: 0;
+}
+
+/* Close Button */
+.side-close {
+  padding: 15px 0;
+  border: none;
+  font-weight: bold;
+  color: white;
+}
+
+.side-close:hover {
+  background-color: #30928d !important;
+}
+
+/* Sidebar links */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.sidebar .nav-link {
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Logout Button in Sidebar */
+.sidebar .logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 12px;
+  transition: color 0.3s;
+}
+
+.sidebar .logout-btn:hover {
+  color: #f8d7da;
+}

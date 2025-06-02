@@ -1,0 +1,126 @@
+.participants-container {
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.072);
+  margin-bottom: 20px;
+}
+
+.participants-container h4 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.avatar-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.avatar-item {
+  position: relative;
+  cursor: pointer;
+  margin-right: -10px;
+}
+
+.avatar-item img, .avatar-item .participant-avatar-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.avatar-crown-badge {
+  position: absolute;
+  bottom: -5px;
+  right: 8px;
+  background: gold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #333;
+  border: 2px solid white;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.participant-item:hover {
+  background-color: #f5f5f5;
+}
+
+.participant-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.participant-avatar-icon {
+  font-size: 32px;
+  margin-right: 10px;
+  color: #6c757d;
+}
+
+.participant-name {
+  flex-grow: 1;
+  margin-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.participant-role {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background-color: #e9ecef;
+  color: #495057;
+  margin-right: 8px;
+}
+
+.participant-role-crown {
+  color: gold;
+  margin-right: 8px;
+}
+
+.participant-remove-btn {
+  color: var(--danger-color);
+  padding: 0 5px;
+}
+
+.participant-remove-btn:hover {
+  color: #bd2130;
+}
+
+.view-all-btn {
+  width: 100%;
+  margin-top: 10px;
+  background-color: var(--identity-color);
+  border-color: var(--identity-color);
+}
+
+.view-all-btn:hover {
+  background-color: var(--hover-color);
+  border-color: var(--hover-color);
+}
+
+.modal-participants {
+  max-height: 60vh;
+  overflow-y: auto;
+}

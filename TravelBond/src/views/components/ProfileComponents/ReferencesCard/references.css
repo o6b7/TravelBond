@@ -1,0 +1,142 @@
+.reference-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reference-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .reference-type {
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .reference-type-host {
+    background-color: var(--identity-color);
+  }
+  
+  .reference-type-traveller {
+    background-color: var(--success-color);
+  }
+  
+  .reference-type-personal {
+    background-color: var(--danger-color);
+  }
+  
+  .reference-stars {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .star-filled {
+    color: #ffc107; /* Gold color for filled stars */
+  }
+  
+  .star-empty {
+    color: #e0e0e0; /* Light gray for empty stars */
+  }
+  
+  .reference-comment {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .reference-by {
+    font-size: 12px;
+    color: #6c757d;
+    text-align: right;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .filter-buttons .btn {
+    flex: 1;
+    text-align: center;
+    border: 1px solid var(--identity-color);
+    color: var(--identity-color);
+    font-weight: bold;
+  }
+  
+  
+  .filter-buttons .btn.active {
+    background-color: var(--identity-color);
+    color: white;
+  }
+  
+  .references-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .references-section h5 {
+    margin-bottom: 16px;
+    color: var(--identity-color);
+  }
+
+  .rating-stars {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .star-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  .star-icon.filled {
+    color: #ffc107;
+  }
+  
+  .star-icon.empty {
+    color: #e0e0e0;
+  }
+
+  .reference-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .reference-by {
+    margin: 0;
+  }
+  
+  .reference-date {
+    margin: 0;
+    font-style: italic;
+  }
+  
+  .reference-delete-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .reference-delete-icon:hover {
+    color: #a71d2a;
+  }
+  

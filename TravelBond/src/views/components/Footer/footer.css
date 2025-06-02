@@ -1,0 +1,55 @@
+.footer {
+  width: 100%;
+  background-color: var(--identity-color, #39aaa4) !important; 
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Footer Navigation Links */
+.footer-nav {
+  margin: 10px 0;
+}
+
+.footer-nav a,
+.footer-contact a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover {
+  color: #22716d;
+}
+
+
+/* Contact Section */
+.footer-contact {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.footer-contact p {
+  margin: 0 0 5px 0;
+}
+
+.footer-contact a {
+  margin: 0;
+}
+
+/* Copyright Section */
+.footer-bottom {
+  margin-top: 15px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
