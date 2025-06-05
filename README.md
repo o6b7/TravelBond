@@ -107,8 +107,8 @@ travelbond/
 ## 👨‍💻 Developed By
 
 **Qusai Mansoor Mohammed Abdullah**  
-📧 Email: qusaii.abdullah@gmail.com
-   LinkedIn Profile: https://www.linkedin.com/in/qusaiabdullah/
+- 📧 Email: qusaii.abdullah@gmail.com
+- LinkedIn Profile: https://www.linkedin.com/in/qusaiabdullah/
 
 ---
 
