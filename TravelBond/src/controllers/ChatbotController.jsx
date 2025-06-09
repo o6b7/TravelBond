@@ -29,6 +29,7 @@ class ChatbotController {
     try {
       let messagesToSend = [];
 
+      // System instructions with personalized greeting if user data exists
       let systemMessage = `You are a professional travel consultant. Follow these rules:
                   1. Maintain conversation context for follow-up questions
                   2. Format responses clearly:
@@ -112,6 +113,7 @@ class ChatbotController {
 
   static calculateCompatibilityScore = async (viewedUser, currentUser) => {
     try {
+      // Prepare the data to send to OpenAI
       const prompt = `
           Calculate a compatibility score (0-100%) between these two users based on their profiles.
           Consider these factors with weights:
@@ -132,49 +134,54 @@ class ChatbotController {
 
           Return ONLY a JSON object with this structure:
           {
-          "score": number,
-          "explanation": string
+          score: number,
+          explanation: string
           }
       `;
 
-      const response = await ChatbotController.client.post('/chat/completions', {
-        model: "gpt-3.5-turbo",
-        messages: [
+      const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+          model: "gpt-3.5-turbo",
+          messages: [
           {
-            role: "system",
-            content: "You are a compatibility calculator. Return ONLY valid JSON with score and explanation."
+              role: "system",
+              content: "You are a compatibility calculator. Analyze user profiles and return a compatibility score with explanation."
           },
           {
-            role: "user",
-            content: prompt
+              role: "user",
+              content: prompt
           }
-        ],
-        temperature: 0.7,
-        response_format: { type: "json_object" },
-        max_tokens: 400 
+          ],
+          temperature: 0.7,
+          max_tokens: 200
+      }, {
+          headers: {
+          'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+          'Content-Type': 'application/json'
+          }
       });
 
-      // Get the raw content from the response
       const result = response.data.choices[0].message.content;
 
-      // try to parse directly
+      const jsonStart = result.indexOf('{');
+      const jsonEnd = result.lastIndexOf('}');
+      const jsonString = result.slice(jsonStart, jsonEnd + 1);
+
       try {
-        return JSON.parse(result);
-      } catch (e) {
-        // If direct parse fails, try to extract JSON from markdown or other formatting
-        const jsonMatch = result.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          return JSON.parse(jsonMatch[0]);
-        }
-        throw new Error("Could not extract valid JSON from response");
+        return JSON.parse(jsonString);
+      } catch (parseError) {
+        console.error("Failed to parse JSON from OpenAI response:", parseError, "Raw content:", result);
+        return {
+          score: 0,
+          explanation: "Could not parse compatibility data"
+        };
       }
-    } catch (error) {
+      } catch (error) {
       console.error("Error calculating compatibility:", error);
       return {
-        score: 0,
-        explanation: "Could not calculate compatibility"
+          score: 0,
+          explanation: "Could not calculate compatibility"
       };
-    }
+      }
   };
 
   static setPreviousMessages(messages) {
@@ -185,14 +192,5 @@ class ChatbotController {
     ChatbotController.conversationContext = null;
   }
 }
-
-
-ChatbotController.client = axios.create({
-  baseURL: 'https://api.openai.com/v1',
-  headers: {
-    'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-    'Content-Type': 'application/json'
-  }
-});
 
 export default ChatbotController;
